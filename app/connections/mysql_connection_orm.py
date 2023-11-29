@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 # AWS RDS MySQL credentials
 
 host = os.getenv('HOST')
-port = int(os.getenv('PORT'))
+port = 3306
 user = os.getenv('USER')
 passwd = os.getenv('PASSWD')
 database_name = os.getenv('DATABASE_NAME')
