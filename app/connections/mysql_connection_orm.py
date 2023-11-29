@@ -1,17 +1,10 @@
 from sqlalchemy.orm import sessionmaker
-import os
 from sqlalchemy import create_engine
-
-# AWS RDS MySQL credentials
-
-host = os.getenv('HOST')
-port = 3306
-user = os.getenv('USER')
-passwd = os.getenv('PASSWD')
-database_name = os.getenv('DATABASE_NAME')
+from app.load_environment import host, port, user, passwd, database_name
 
 # Create SQLAlchemy URL
 SQLALCHEMY_DATABASE_URL = f"mysql+mysqlconnector://{user}:{passwd}@{host}:{port}/{database_name}"
+print('==============================='+SQLALCHEMY_DATABASE_URL)
 
 # Create engine
 engine = create_engine(SQLALCHEMY_DATABASE_URL, pool_pre_ping=True)

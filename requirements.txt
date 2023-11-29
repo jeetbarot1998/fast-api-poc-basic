@@ -89,3 +89,4 @@ mysql-connector-python
 alembic
 websockets
 geopy
+python-dotenv
